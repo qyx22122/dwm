@@ -65,6 +65,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_green, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *rebuildcmd[]  = { "alacritty","-e","/home/tibor/scripts/rebuild_script",NULL};
+static const char *dmenu_syscmd[]  = { "/home/tibor/scripts/dmenu_sys",NULL};
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *screenshotcmd[]  = { "flameshot", "gui", NULL };
 
@@ -75,6 +76,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = rebuildcmd } },
+	{ MODKEY,                       XK_q,      spawn,          {.v = dmenu_syscmd } },
 	//{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
